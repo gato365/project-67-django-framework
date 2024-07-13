@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample Page</title>
+    {% if title %}
+    <title>{{ title }}</title>
+{% else %}
+    <title>Blog Home</title>
+{% endif %}
 </head>
 <body>
     <header>
