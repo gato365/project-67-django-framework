@@ -1,0 +1,11 @@
+Video 1: Important commands
+pip install django
+python -m django startproject django_project
+python manage.py runserver
+
+
+Video 2: Important commands
+python manage.py startapp blog
+
+
+Views.py file
