@@ -1,35 +1,11 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-{% comment %} If else statment about regarding the title {% endcomment %}
-    {% if title %}
-        <title>{{ title }}</title>
-    {% else %}
-        <title>Blog Home BOW</title>
-    {% endif %}
-    
-</head>
-<body>
-    <header>
-        <h1>Blog for user</h1>
-    </header>
-
-    <main>
-{% comment %} Loop Posts to get posts {% endcomment %}
-        {% for post in posts %}
-            <article>
-                <h2>{{ post.title }}</h2>
-                <p>{{ post.content }}</p>
-                <p>Published on: {{ post.date_posted }}</p>
-                <p>Author: {{ post.author }}</p>
-            </article>
-        {% endfor %}
-
-
-    </main>
-   
-</body>
-</html>
+{% extends "blog/base.html" %}
+{% block content %}
+{% for post in posts %}
+    <article>
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.content }}</p>
+        <p>Published on: {{ post.date_posted }}</p>
+        <p>Author: {{ post.author }}</p>
+    </article>
+{% endfor %}
+{% endblock content %}
