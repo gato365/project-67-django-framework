@@ -9,3 +9,9 @@ python manage.py startapp blog
 
 
 Views.py file
+
+Data Base Migration
+need auth_user
+
+emanwill23
+23536Kdoot
