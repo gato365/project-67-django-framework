@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+
+{% comment %} Put a condition IF user is logged in display "Welcome their username" in h1 tages before posts {% endcomment %}
+{% block content %}
+{% if user.is_authenticated %}
+  <h1>There You go {{ user.username }}</h1>
+{% endif %}
+
+<article class="media content-section">
+  <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2" href="#">{{ object.author }}</a>
+        <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+      </div>
+      <h2 class="article-title">{{ object.title }}</h2>
+      <p class="article-content">{{ object.content }}</p>
+    </div>
+  </article>
+
+{% endblock content %}

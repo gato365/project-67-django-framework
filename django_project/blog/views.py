@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from .models import Post
 
 
@@ -23,7 +23,9 @@ class PostListView(ListView):
     ordering = ['-date_posted'] # This is the order in which the posts will be displayed
 
 
-
+class PostDetailView(DetailView):
+    model = Post
+    
 
 def about(request):
     return render(request, 'blog/about.html',{'title': 'ABOUTTT'})
