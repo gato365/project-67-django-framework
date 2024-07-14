@@ -1,5 +1,9 @@
-{% extends "blog/base.html" %}
+{% extends 'base.html' %}
+
 {% block content %}
-    <h1>About Page</h1>
-    <p>This is the about page of the blog.</p>
-{% endblock content %}
+<div class="container">
+    <h1>Logged Out</h1>
+    <p>You have been successfully logged out.</p>
+    <a href="{% url 'login' %}" class="btn btn-primary">Log In Again</a>
+</div>
+{% endblock %}
